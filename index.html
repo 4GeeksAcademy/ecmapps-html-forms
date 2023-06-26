@@ -1,36 +1,139 @@
 <!DOCTYPE html>
 <header>
     <title>HTML Forms</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </header>
 <body>
-    <div class="container-fluid my-3 d-flex justify-content-center align-items-center h-100">
-        <div class="card">
-            <div class="card-header">
-              Payment form example
-            </div>
-            <div class="card-body">
-                <form>
+    <form>
+        <div class="container-fluid my-3 d-flex justify-content-center align-items-center">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Payment form example</strong>
+                </div>
+                <div class="card-body">
                     <div class="alert alert-danger" role="alert">
                         Some fields are missing
                     </div>
                     <!--Form itself-->
+                    <!--First row-->
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-6">
                             <div class="row row-2">
                                 <p>Card #</p>
-                                <input type="text" name="" id="">
+                                <div class="input-group"><input type="text" class="form-control" placeholder="XXXX XXXX XXXX XXXX" aria-label="Card Number"></div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="row row-2">
+                                <p>CVC</p>
+                                <div class="input-group"><input type="text" class="form-control" placeholder="1234" aria-label="CVC"></div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row row-2">
+                                <div><p>Amount</p></div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Amount" aria-label="Amount">
+                                    <!-- Not needed for this exercise
+                                    <div class="input-group-append">
+                                      <span class="input-group-text">.00</span>
+                                    </div>
+                                    -->
+                                </div>
                             </div>
                         </div>
                     </div>
-                </form>
+                    <!--Second row-->
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <div class="row row-2">
+                                <p>First Name</p>
+                                <div class="input-group"><input type="text" class="form-control" aria-label="First Name"></div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row row-2">
+                                <p>Last Name</p>
+                                <div class="input-group"><input type="text" class="form-control" aria-label="Last Name"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Third row-->
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <div class="row row-2">
+                                <p>City</p>
+                                <div class="input-group"><input type="text" class="form-control" aria-label="City"></div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="row row-2">
+                                <p>State</p>
+                                <div class="input-group">
+                                    <select class="form-select">
+                                        <option selected>Pick a state</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="row row-2">
+                                <p>Postal Code</p>
+                                <div class="input-group"><input type="text" class="form-control" aria-label="Postal Code"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Last Row-->
+                    <div class="row d-flex justify-content-between mb-3">
+                        <div class="col-4">
+                            <div class="row row-2">
+                                <p>We accept:</p>
+                                <div class="input-group">
+                                    <div class="form-control d-flex justify-content-around flex-wrap px-1 py-1" style="background-color: rgba(108, 117, 126,255);">
+                                        <div class="form-check form-check-inline ms-0">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <label class="form-check-label" for="inlineRadio1"><i class="fa-brands fa-cc-mastercard" style="color:white;"></i></label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                            <label class="form-check-label" for="inlineRadio2"><i class="fa-brands fa-cc-visa" style="color:white;"></i></label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                            <label class="form-check-label" for="inlineRadio3"><i class="fa-brands fa-cc-diners-club" style="color:white;"></i></label>
+                                        </div>
+                                        <div class="form-check form-check-inline me-0">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                            <label class="form-check-label" for="inlineRadio3"><i class="fa-brands fa-cc-amex" style="color:white;"></i></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row row-2">
+                                <p>Message</p>
+                            </div>
+                            <div class="iput-group">
+                                <textarea class="form-control" name="messageArea" id="messageArea" cols="auto" rows="2"></textarea>
+                                <div id="messageArea" class="form-text">Add any notes here.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-end">
+                    <a href="#" class="btn btn-secondary me-2">Cancel</a>
+                    <a href="#" class="btn btn-primary">Send</a>
+                </div>
             </div>
-            <div class="card-footer d-flex justify-content-end">
-                <a href="#" class="btn btn-secondary me-2">Cancel</a>
-                <a href="#" class="btn btn-primary">Send</a>
-            </div>
-          </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
